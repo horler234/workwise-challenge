@@ -1,0 +1,50 @@
+@import "./theme/variables";
+@import "./theme/mixin";
+
+ul.navbar-list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 47px;
+  padding: 55px 0 10px;
+
+  li.navbar-list-item {
+    margin-left: 48px;
+    font-weight: 700;
+    a {
+      color: $brand-white;
+      text-decoration: none;
+      letter-spacing: -1px;
+    }
+  }
+}
+
+ul.navbar-list.footer {
+  border-bottom: 1px solid #ffffff;
+  margin: 0;
+  padding-bottom: 48px;
+  width: 100%;
+  margin-bottom: 48px;
+  justify-content: space-between;
+
+  li.navbar-list-item {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  ul.navbar-list {
+    display: none;
+  }
+
+  ul.navbar-list.footer {
+    display: flex;
+    border: none;
+    flex-direction: column;
+    margin-bottom: 0;
+
+    li.navbar-list-item {
+      margin-bottom: 10px;
+    }
+  }
+}

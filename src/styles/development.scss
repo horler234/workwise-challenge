@@ -1,0 +1,76 @@
+@import "./theme/variables";
+@import "./theme/mixin";
+
+.development-section-wrapper {
+  width: 75%;
+  margin: 45px auto 0;
+}
+
+.development-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $brand-text;
+
+  p {
+    font-size: 20px;
+    line-height: 29.4px;
+    letter-spacing: -2px;
+  }
+
+  h1 {
+    @include text-title();
+    font-weight: 400;
+    width: 726px;
+  }
+}
+
+.development-content {
+  width: 546px;
+  margin-left: auto;
+  flex-direction: column;
+  margin-bottom: 80px;
+
+  p {
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    @include link();
+    text-decoration: none;
+    color: $brand-text;
+
+    svg {
+      fill: $brand-text;
+    }
+
+    &:after {
+      width: 266px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover:after {
+      height: 33px;
+      margin-top: -35px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .development-section-wrapper {
+    width: 90%;
+    margin-top: 0;
+  }
+
+  .development-content {
+    width: 100%;
+
+    p {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+}

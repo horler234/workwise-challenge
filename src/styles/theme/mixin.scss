@@ -1,0 +1,38 @@
+@import "./variables";
+
+@mixin text-title {
+    font-size: 96px;
+    line-height: 86px;
+    margin-bottom: 48px;
+    letter-spacing: -7px;
+  
+    @media (max-width: 768px) {
+      font-size: 50px;
+      line-height: 40px;
+      letter-spacing: -2px;
+    }
+  }
+  
+  @mixin caption-text {
+    font-size: 20px;
+    line-height: 35px;
+  }
+  
+  @mixin link {
+    font-size: 25px;
+    line-height: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  
+    svg {
+      margin-left: 15px;
+    }
+  
+    &:after {
+      display: block;
+      content: "";
+      margin-top: -18px;
+      height: 16px;
+      background: $brand-golden-yellow;
+    }
+  }

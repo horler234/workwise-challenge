@@ -1,0 +1,14 @@
+@import "./theme/variables";
+@import "./theme/mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "DM Sans", sans-serif;
+}
