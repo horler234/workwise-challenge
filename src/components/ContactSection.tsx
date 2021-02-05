@@ -65,7 +65,7 @@ export const ContactSection = () => {
   };
 
   // SUBMIT EVENT
-  const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     // handle error states
@@ -94,13 +94,6 @@ export const ContactSection = () => {
         setCompanyError(error.companyName);
       }
     } else {
-      // const contactInfo = {
-      //   name,
-      //   email,
-      //   phoneNumber,
-      //   companyName,
-      //   message,
-      // };
       const requestOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -113,17 +106,16 @@ export const ContactSection = () => {
           message,
         }),
       };
-      const formResult = await fetch("https://workwise.ng/api/savemessage", requestOptions)
+      fetch("https://workwise.ng/api/savemessage", requestOptions)
         .then((response) => response.json())
-        .then((data) => data);
-
-      // alert("Form submitted successfully!");
-      // setName("");
-      // setEmail("");
-      // setCompany("");
-      // setPhoneNumber("");
-      // setMessage("");
+        .then((data) => console.log(data));
     }
+
+    setName("");
+    setCompany("");
+    setEmail("");
+    setPhoneNumber("");
+    setMessage("");
   };
 
   return (
